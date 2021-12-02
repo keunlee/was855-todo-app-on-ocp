@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: was855todoappearear
+  name: was855todoappearear
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: was855todoappearear
+  template:
+    metadata:
+      labels:
+        app: was855todoappearear
+    spec:
+      containers:
+        - image: image-registry.openshift-image-registry.svc:5000/myproject/was855todoappearear:latest
+          imagePullPolicy: Always
+          name: was855todoappearear
+          ports:
+            - containerPort: 9080
+              protocol: TCP

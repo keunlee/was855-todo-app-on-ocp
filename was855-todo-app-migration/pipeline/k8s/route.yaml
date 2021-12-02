@@ -1,0 +1,15 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: was855todoappearear
+  name: was855todoappearear
+spec:
+  path:
+    /
+  port:
+    targetPort: http
+  to:
+    kind: Service
+    name: was855todoappearear
+    weight: 100
