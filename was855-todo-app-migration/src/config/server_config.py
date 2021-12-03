@@ -10,8 +10,9 @@ NodeName=AdminControl.getNode()
 # The following variables are used to replace sensitive data in the configuration for the application.
 # The values for these variables were not collected because the includeSensitiveData option was not specified.
 # ============================================================
-pg_datasource_password_1=''
-pg_datasource_user_1=''
+pg_datasource_password_1='postgres'
+pg_datasource_user_1='postgres'
+pg_datasource_host_1='postgres.demo-todo-was855-custom'
 # ============================================================
 
 print 'Starting Creating JVM Properties'
@@ -30,7 +31,7 @@ print 'Starting Creating Activation Specifications'
 print 'Starting Creating Connection Factories'
 
 print 'Starting Creating JDBC Providers'
-AdminConfigVar_0=AdminConfig.create('JDBCProvider', Node, [['classpath', '/opt/IBM/WebSphere/AppServer/pgsql/postgresql-42.3.1.jar'], ['description', 'pgSQL_provider'], ['implementationClassName', 'org.postgresql.jdbc2.optional.ConnectionPool'], ['name', 'pgSQL_provider'], ['providerType', 'User-defined JDBC Provider'], ['xa', 'false']])
+AdminConfigVar_0=AdminConfig.create('JDBCProvider', Node, [['classpath', '/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/DefaultCell01/was855todoappearear.ear/was855-todo-app-1.0-SNAPSHOT.war/WEB-INF/lib/postgresql-42.3.1.jar'], ['description', 'pgSQL_provider'], ['implementationClassName', 'org.postgresql.jdbc2.optional.ConnectionPool'], ['name', 'pgSQL_provider'], ['providerType', 'User-defined JDBC Provider'], ['xa', 'false']])
 AdminConfigVar_1=AdminTask.createDatasource(AdminConfigVar_0, ["-name", "pg_datasource", "-jndiName", "pg", "-dataStoreHelperClassName", "com.ibm.websphere.rsadapter.ConnectJDBCDataStoreHelper", "-configureResourceProperties", "[]"])
 AdminConfigVar_2=AdminConfig.showAttribute(AdminConfigVar_1, 'propertySet')
 AdminConfig.create('J2EEResourceProperty', AdminConfigVar_2, [['name', 'databaseName'], ['type', 'java.lang.String'], ['value', 'testdb']])
@@ -43,7 +44,7 @@ AdminConfig.create('J2EEResourceProperty', AdminConfigVar_2, [['name', 'password
 AdminConfig.create('J2EEResourceProperty', AdminConfigVar_2, [['name', 'portNumber'], ['type', 'int'], ['value', '5432']])
 AdminConfig.create('J2EEResourceProperty', AdminConfigVar_2, [['name', 'preTestSQLString'], ['type', 'java.lang.String'], ['value', 'SELECT 1 FROM DUMMYTABLE']])
 AdminConfig.create('J2EEResourceProperty', AdminConfigVar_2, [['name', 'reauthentication'], ['type', 'java.lang.Boolean'], ['value', 'false']])
-AdminConfig.create('J2EEResourceProperty', AdminConfigVar_2, [['name', 'serverName'], ['type', 'java.lang.String'], ['value', '127.0.0.1']])
+AdminConfig.create('J2EEResourceProperty', AdminConfigVar_2, [['name', 'serverName'], ['type', 'java.lang.String'], ['value', pg_datasource_host_1]])
 AdminConfig.create('J2EEResourceProperty', AdminConfigVar_2, [['name', 'user'], ['type', 'java.lang.String'], ['value', pg_datasource_user_1]])
 AdminConfig.create('J2EEResourceProperty', AdminConfigVar_2, [['name', 'validateNewConnection'], ['type', 'java.lang.Boolean'], ['value', 'false']])
 AdminConfig.create('J2EEResourceProperty', AdminConfigVar_2, [['name', 'validateNewConnectionRetryCount'], ['type', 'java.lang.Integer'], ['value', '100']])

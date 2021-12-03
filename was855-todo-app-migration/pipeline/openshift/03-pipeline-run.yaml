@@ -11,10 +11,10 @@ spec:
       claimName: shared-task-storage
   params:
   - name: repo-url
-    value: https://github.com/{YOUR_GIT_ID}/was855todoappearear
+    value: https://github.com/keunlee/was855-todo-app-on-ocp.git
   - name: branch-name
-    value: master
+    value: dev
   - name: repo-dockerfile
     value: Dockerfile
   - name: image-url
-    value: image-registry.openshift-image-registry.svc:5000/myproject/was855todoappearear:latest
+    value: image-registry.openshift-image-registry.svc:5000/demo-todo-was855-custom/was855todoappearear:latest
