@@ -20,10 +20,10 @@ spec:
             oc new-app postgresql-persistent -p=NAMESPACE=openshift -p=DATABASE_SERVICE_NAME=postgres -p=POSTGRESQL_USER=postgres -p=POSTGRESQL_PASSWORD=postgres -p=POSTGRESQL_DATABASE=todo -p=POSTGRESQL_VERSION=13-el8
             
             sleep 60
-            oc wait --for=condition=Ready pods --timeout=360s --selector name=postgresql
+            oc wait --for=condition=Ready pods --timeout=360s --selector name=postgres
             
             sleep 60
-            POSTGRESQL_POD=$(oc get po --selector=name=postgresql -o jsonpath={..metadata.labels.name})
+            POSTGRESQL_POD=$(oc get po --selector=name=postgres -o jsonpath={..metadata.labels.name})
             oc cp "was855-todo-app-migration/scripts/01-database.sql" $POSTGRESQL_POD:/tmp
             oc cp "was855-todo-app-migration/scripts/02-schema.sql" $POSTGRESQL_POD:/tmp
   
