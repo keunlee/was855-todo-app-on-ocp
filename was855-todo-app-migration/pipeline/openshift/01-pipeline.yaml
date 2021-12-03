@@ -57,11 +57,19 @@ spec:
     workspaces:
     - name: source
       workspace: build-workspace
+  - name: create-postgres-database-and-resources
+    taskRef:
+      name: create-database
+    runAfter:
+      - build-application
+    workspaces:
+      - name: source
+        workspace: build-workspace
   - name: apply-application-manifests
     taskRef:
       name: apply-manifests
     runAfter:
-      - build-application
+      - create-postgres-database-and-resources
     params:
     - name: manifest_dir
       value: was855-todo-app-migration/pipeline/k8s

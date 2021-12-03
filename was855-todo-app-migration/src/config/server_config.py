@@ -41,7 +41,7 @@ AdminConfigVar_1=AdminTask.createDatasource(AdminConfigVar_0, ["-name", "pg_data
 AdminConfig.save()
 
 AdminConfigVar_2=AdminConfig.showAttribute(AdminConfigVar_1, 'propertySet')
-AdminConfig.create('J2EEResourceProperty', AdminConfigVar_2, [['name', 'databaseName'], ['type', 'java.lang.String'], ['value', 'testdb']])
+AdminConfig.create('J2EEResourceProperty', AdminConfigVar_2, [['name', 'databaseName'], ['type', 'java.lang.String'], ['value', 'todo']])
 AdminConfig.create('J2EEResourceProperty', AdminConfigVar_2, [['name', 'enableMultithreadedAccessDetection'], ['type', 'java.lang.Boolean'], ['value', 'false']])
 AdminConfig.create('J2EEResourceProperty', AdminConfigVar_2, [['name', 'errorDetectionModel'], ['type', 'java.lang.String'], ['value', 'ExceptionMapping']])
 AdminConfig.create('J2EEResourceProperty', AdminConfigVar_2, [['name', 'jmsOnePhaseOptimization'], ['type', 'java.lang.Boolean'], ['value', 'false']])
