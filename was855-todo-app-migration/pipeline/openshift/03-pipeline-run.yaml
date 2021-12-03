@@ -20,5 +20,3 @@ spec:
     value: image-registry.openshift-image-registry.svc:5000/demo-todo-was855-custom/was855todoappearear:latest
   - name: repo-context
     value: was855-todo-app-migration
-  - name: manifest-dir
-    value: was855-todo-app-migration/pipeline/k8s
