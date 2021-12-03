@@ -12,24 +12,24 @@ spec:
       command: ["/bin/bash", "-c"]
       args:
         - |-
-          POSTGRESQL_POD=$(oc get po --selector=name=postgresql -o jsonpath='{..metadata.labels.name}')
+          yum install git -y
+          POSTGRESQL_POD=$(oc get po --selector=name=postgres -o jsonpath='{..metadata.name}')
           
           if [ -z "$POSTGRESQL_POD" ];
           then
-            echo Createing Postgresql Database Instance, Schema, and Tables
+            echo Createing Postgresql Database Instance, Schema, and Tables  
             oc new-app postgresql-persistent -p=NAMESPACE=openshift -p=DATABASE_SERVICE_NAME=postgres -p=POSTGRESQL_USER=postgres -p=POSTGRESQL_PASSWORD=postgres -p=POSTGRESQL_DATABASE=todo -p=POSTGRESQL_VERSION=13-el8
             
             sleep 60
             oc wait --for=condition=Ready pods --timeout=360s --selector name=postgres
             
-            sleep 60
-            POSTGRESQL_POD=$(oc get po --selector=name=postgres -o jsonpath={..metadata.labels.name})
+            ls -ll -a
+          
+            POSTGRESQL_POD=$(oc get po --selector=name=postgres -o jsonpath={..metadata.name})
             oc cp "was855-todo-app-migration/scripts/01-database.sql" $POSTGRESQL_POD:/tmp
             oc cp "was855-todo-app-migration/scripts/02-schema.sql" $POSTGRESQL_POD:/tmp
-  
-            PGPASSWORD=postgres 
-            oc exec -ti $POSTGRESQL_POD -- /bin/bash -c "psql -h localhost -p 5432 -U postgres -d postgres -a -f /tmp/01-database.sql"
-            oc exec -ti $POSTGRESQL_POD -- /bin/bash -c "psql -h localhost -p 5432 -U postgres -d todo -a -f /tmp/02-schema.sql"
+            oc exec -ti $POSTGRESQL_POD -- /bin/bash -c "PGPASSWORD=postgres psql -h localhost -p 5432 -U postgres -d postgres -a -f /tmp/01-database.sql"
+            oc exec -ti $POSTGRESQL_POD -- /bin/bash -c "PGPASSWORD=postgres psql -h localhost -p 5432 -U postgres -d todo -a -f /tmp/02-schema.sql"
           else
             echo "Postgresql Database Already Deployed"
           fi
