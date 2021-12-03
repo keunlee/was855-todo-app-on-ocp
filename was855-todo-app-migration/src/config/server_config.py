@@ -31,8 +31,15 @@ print 'Starting Creating Activation Specifications'
 print 'Starting Creating Connection Factories'
 
 print 'Starting Creating JDBC Providers'
+
+print 'Create JDBC Provider'
 AdminConfigVar_0=AdminConfig.create('JDBCProvider', Node, [['classpath', '/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/DefaultCell01/was855todoappearear.ear/was855-todo-app-1.0-SNAPSHOT.war/WEB-INF/lib/postgresql-42.3.1.jar'], ['description', 'pgSQL_provider'], ['implementationClassName', 'org.postgresql.jdbc2.optional.ConnectionPool'], ['name', 'pgSQL_provider'], ['providerType', 'User-defined JDBC Provider'], ['xa', 'false']])
+AdminConfig.save()
+
+print 'Create Datasource'
 AdminConfigVar_1=AdminTask.createDatasource(AdminConfigVar_0, ["-name", "pg_datasource", "-jndiName", "pg", "-dataStoreHelperClassName", "com.ibm.websphere.rsadapter.ConnectJDBCDataStoreHelper"])
+AdminConfig.save()
+
 AdminConfigVar_2=AdminConfig.showAttribute(AdminConfigVar_1, 'propertySet')
 AdminConfig.create('J2EEResourceProperty', AdminConfigVar_2, [['name', 'databaseName'], ['type', 'java.lang.String'], ['value', 'testdb']])
 AdminConfig.create('J2EEResourceProperty', AdminConfigVar_2, [['name', 'enableMultithreadedAccessDetection'], ['type', 'java.lang.Boolean'], ['value', 'false']])
