@@ -39,12 +39,20 @@ spec:
     workspaces:
     - name: output
       workspace: build-workspace
+  - name: create-postgres-database-and-resources
+    taskRef:
+      name: create-database
+    runAfter:
+      - clone-app-repo
+    workspaces:
+      - name: source
+        workspace: build-workspace
   - name: build-application
     taskRef:
       name: buildah
       kind: ClusterTask
     runAfter:
-    - clone-app-repo
+    - create-postgres-database-and-resources
     params:
     - name: IMAGE
       value: $(params.image-url)
@@ -57,19 +65,11 @@ spec:
     workspaces:
     - name: source
       workspace: build-workspace
-  - name: create-postgres-database-and-resources
-    taskRef:
-      name: create-database
-    runAfter:
-      - build-application
-    workspaces:
-      - name: source
-        workspace: build-workspace
   - name: apply-application-manifests
     taskRef:
       name: apply-manifests
     runAfter:
-      - create-postgres-database-and-resources
+      - build-application
     params:
     - name: manifest_dir
       value: was855-todo-app-migration/pipeline/k8s
