@@ -22,8 +22,6 @@ spec:
             
             sleep 60
             oc wait --for=condition=Ready pods --timeout=360s --selector name=postgres
-            
-            ls -ll -a
           
             POSTGRESQL_POD=$(oc get po --selector=name=postgres -o jsonpath={..metadata.name})
             oc cp "was855-todo-app-migration/scripts/01-database.sql" $POSTGRESQL_POD:/tmp
