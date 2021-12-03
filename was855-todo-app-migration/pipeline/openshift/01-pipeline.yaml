@@ -64,7 +64,7 @@ spec:
       - build-application
     params:
     - name: manifest_dir
-      value: $(params.manifest-dir)
+      value: was855-todo-app-migration/pipeline/k8s
     workspaces:
     - name: source
       workspace: build-workspace
