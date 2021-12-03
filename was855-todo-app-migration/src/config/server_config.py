@@ -10,9 +10,10 @@ NodeName=AdminControl.getNode()
 # The following variables are used to replace sensitive data in the configuration for the application.
 # The values for these variables were not collected because the includeSensitiveData option was not specified.
 # ============================================================
+ocp_project_namespace='demo-todo-was855-custom'
 pg_datasource_password_1='postgres'
 pg_datasource_user_1='postgres'
-pg_datasource_host_1='postgres.demo-todo-was855-custom'
+pg_datasource_host_1='postgres.' + ocp_project_namespace
 # ============================================================
 
 print 'Starting Creating JVM Properties'
