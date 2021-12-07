@@ -9,3 +9,7 @@ COPY --chown=was:root was855-todo-app-ear-1.0-snapshot.ear /work/config/was855-t
 COPY --chown=was:root ./src/config /work/config
 COPY --chown=was:root ./lib /work/config/lib
 RUN /work/configure.sh
+
+EXPOSE 9080
+EXPOSE 9043
+EXPOSE 9443
