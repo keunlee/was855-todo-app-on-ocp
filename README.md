@@ -20,7 +20,7 @@ Todo Application - Websphere 8.5.5 Traditional on Openshift
 
 see [READ_THIS_FIRST](was855-todo-app-migration/READ_THIS_FIRST.md)
 
-# Setup and Deploy Locally
+# Deploy Locally
 
 see [LOCAL_SETUP](docs/LOCAL_SETUP.md)
 
