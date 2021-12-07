@@ -7,7 +7,6 @@ Todo Application - Websphere 8.5.5 Traditional on Openshift
 
 - Openshift >= 4.6.x
 - Openshift CLI (`oc`) >= 4.6.x
-- 
 
 **Local Deployment**
 
