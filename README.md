@@ -7,6 +7,7 @@ Todo Application - Websphere 8.5.5 Traditional on Openshift
 - maven
 - Openshift >= 4.6.x
 - Openshift CLI (`oc`) >= 4.6.x
+- Postgresql Database Server >= 14
 - IBM Websphere Traditional Server 8.5.5
 - IBM Transformation Advisor
 
@@ -20,7 +21,7 @@ see [READ_THIS_FIRST](was855-todo-app-migration/READ_THIS_FIRST.md)
 
 execute the following SQL scripts on your Postgresql Database server located in: 
 
-```
+```bash
 ├── was855-todo-app-migration
 │   └── scripts
 │       └── 01-database.sql
@@ -45,16 +46,21 @@ The resulting build will show in the following target folders:
 │       └── was855-todo-app-ear-1.0-SNAPSHOT.ear
 ```
 
-**Deploy the EAR file via any one of the following options:** 
+**Start the application server (if not started already)**
 
-- Websphere admin console 
-  - Admin Console - https://localhost:9043/ibm/console/login.do?action=secure
-    - [Example deployment walkthrough](https://www.youtube.com/watch?v=qg4lhtNiYtg)
-- IDE 
-  - [Intellij](https://www.jetbrains.com/help/idea/run-debug-configuration-websphere-server.html)
-  - [IBM Rational Application Developer for WebSphere Software](https://www.ibm.com/products/rad-for-websphere-software)
+- start by command line:
+  - `/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/bin/startServer.sh server1`
+- start via gui tools (installed via IBM Installation Manager)
 
 **Setup JNDI in Websphere Application Server**
+
+You will need to have a copy of the Postgres Driver Library at hand to point to in the JNDI setup classpath below. see:
+
+```bash
+├── was855-todo-app-migration
+│   └── lib
+│       └── postgresql-42.3.1.jar
+```
 
 - Add a JDBC Provider
 
@@ -64,12 +70,12 @@ The resulting build will show in the following target folders:
 
 ![Screenshot from 2021-12-07 10-21-33](https://user-images.githubusercontent.com/61749/145066736-8f8350f0-3cab-4ffd-a5df-a77d3b84a530.png)
 
-**Start the application server (if not started already)**
+**Deploy the EAR file via any one of the following options:** 
 
-- start by command line:
-  - `/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/bin/startServer.sh server1`
-- start via gui tools (installed via IBM Installation Manager)
-
+- Websphere admin console 
+  - Admin Console - https://localhost:9043/ibm/console/login.do?action=secure
+    - [Example deployment walkthrough](https://www.youtube.com/watch?v=qg4lhtNiYtg)
+    
 **Validate your database connectivity by navigating to:** 
 
 http://localhost:9080/was855-todo-app/dbtest-servlet
