@@ -55,9 +55,8 @@ You will need to have a copy of the Postgres Driver Library at hand to point to 
 
 **Deploy the EAR file**
 
-- Websphere admin console
-    - Admin Console - https://localhost:9043/ibm/console/login.do?action=secure
-    - [Example: Websphere app deployment walkthrough](https://www.youtube.com/watch?v=qg4lhtNiYtg)
+- Websphere Admin Console - https://localhost:9043/ibm/console/login.do?action=secure
+- [Example: Websphere app deployment walkthrough](https://www.youtube.com/watch?v=qg4lhtNiYtg)
 
 **Validate your database connectivity by navigating to:**
 
