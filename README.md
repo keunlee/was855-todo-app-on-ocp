@@ -7,6 +7,7 @@ Todo Application - Websphere 8.5.5 Traditional on Openshift
 
 - Openshift >= 4.6.x
 - Openshift CLI (`oc`) >= 4.6.x
+- IBM Transformation Advisor
 
 **Local Deployment**
 
@@ -14,9 +15,12 @@ Todo Application - Websphere 8.5.5 Traditional on Openshift
 - maven
 - Postgresql Database Server >= 14
 - IBM Websphere Traditional Server 8.5.5
-- IBM Transformation Advisor
 
 # Deploy to Openshift
+
+Leveraging the IBM Transformation Advisor, the contents of `was855-todo-app-migration` are generated.
+
+After artifact generation, you can tailor any facet of the artifacts generated to suit your deployment needs to Openshift.
 
 see [READ_THIS_FIRST](was855-todo-app-migration/READ_THIS_FIRST.md)
 
