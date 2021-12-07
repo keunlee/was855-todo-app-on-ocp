@@ -53,6 +53,11 @@ You will need to have a copy of the Postgres Driver Library at hand to point to 
 
 ![Screenshot from 2021-12-07 10-21-33](https://user-images.githubusercontent.com/61749/145066736-8f8350f0-3cab-4ffd-a5df-a77d3b84a530.png)
 
+- Set Data Source Custom Properties
+
+![Screenshot from 2021-12-07 11-57-22](https://user-images.githubusercontent.com/61749/145081700-3d804083-912d-4a77-ae67-9bd8039e564e.png)
+
+
 **Deploy the EAR file**
 
 - Websphere Admin Console - https://localhost:9043/ibm/console/login.do?action=secure
