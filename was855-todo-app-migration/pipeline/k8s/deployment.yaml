@@ -15,7 +15,7 @@ spec:
         app: todo
     spec:
       containers:
-        - image: image-registry.openshift-image-registry.svc:5000/demo-todo-was855-custom/was855todoappearear:latest
+        - image: image-registry.openshift-image-registry.svc:5000/demo-todo-was855/was855todoappearear:latest
           imagePullPolicy: Always
           name: todo
           ports:
