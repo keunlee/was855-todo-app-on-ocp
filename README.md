@@ -16,7 +16,7 @@ Todo Application - Websphere 8.5.5 Traditional on Openshift
 - IBM Websphere Traditional Server 8.5.5
 - IBM Transformation Advisor
 
-## Deploy to Openshift
+# Deploy to Openshift
 
 see [READ_THIS_FIRST](was855-todo-app-migration/READ_THIS_FIRST.md)
 
