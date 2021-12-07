@@ -64,7 +64,6 @@ The resulting build will show in the following target folders:
 
 ![Screenshot from 2021-12-07 10-21-33](https://user-images.githubusercontent.com/61749/145066736-8f8350f0-3cab-4ffd-a5df-a77d3b84a530.png)
 
-
 **Start the application server (if not started already)**
 
 - start by command line:
