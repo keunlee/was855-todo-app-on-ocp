@@ -10,7 +10,7 @@
 | pipeline/openshift/ | Directory for OpenShift pipeline manifest files |
 
 ### Notes
-- The pipeline artifacts for openshift are compatible with OpenShift 4.6 and 4.7.
+- The pipeline artifacts for openshift are compatible with OpenShift >= 4.6.
 
 - The generated `src/config/server_config.py` script file may contain password variable but its value has been stripped off from
 the original source environment.  You need to provide it manually. For example, 
