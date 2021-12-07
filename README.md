@@ -22,7 +22,7 @@ Leveraging the IBM Transformation Advisor, the contents of `was855-todo-app-migr
 
 After artifact generation, you can tailor any facet of the artifacts generated to suit your deployment needs to Openshift.
 
-see [READ_THIS_FIRST](was855-todo-app-migration/READ_THIS_FIRST.md)
+see [was55-todo-app-migration/README](was855-todo-app-migration/READ.md)
 
 # Deploy Locally
 
