@@ -1,4 +1,4 @@
-# Setup and Deploy Locally
+# Deploy Locally
 
 ## Setup Postgresql
 
