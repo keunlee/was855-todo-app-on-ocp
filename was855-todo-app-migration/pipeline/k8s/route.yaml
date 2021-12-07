@@ -6,7 +6,7 @@ metadata:
   name: todo
 spec:
   path:
-    /
+    /was855-todo-app
   port:
     targetPort: http
   to:
