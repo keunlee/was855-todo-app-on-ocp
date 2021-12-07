@@ -23,3 +23,5 @@ see [READ_THIS_FIRST](was855-todo-app-migration/READ_THIS_FIRST.md)
 # Setup and Deploy Locally
 
 see [LOCAL_SETUP](docs/LOCAL_SETUP.md)
+
+![Screenshot from 2021-12-07 10-41-13](https://user-images.githubusercontent.com/61749/145069982-5c546756-1eb4-4ac5-8879-f90023149f67.png)
