@@ -25,3 +25,5 @@ spec:
               protocol: TCP
             - containerPort: 9443
               protocol: TCP
+            - containerPort: 9060
+              protocol: TCP
