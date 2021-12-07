@@ -21,3 +21,7 @@ spec:
           ports:
             - containerPort: 9080
               protocol: TCP
+            - containerPort: 9043
+              protocol: TCP
+            - containerPort: 9443
+              protocol: TCP
