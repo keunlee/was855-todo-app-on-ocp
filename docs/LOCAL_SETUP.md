@@ -37,6 +37,10 @@ The resulting build will show in the following target folders:
 
 **Setup JNDI in Websphere Application Server**
 
+Login to the server: 
+
+Websphere Admin Console - https://localhost:9043/ibm/console/login.do?action=secure
+
 You will need to have a copy of the Postgres Driver Library at hand to point to in the JNDI setup classpath below. see:
 
 ```bash
