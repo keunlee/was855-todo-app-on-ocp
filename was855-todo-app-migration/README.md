@@ -29,8 +29,7 @@
 ## Deploy to Red Hat OpenShift Container Platform using OpenShift Pipelines
 
 ### Prerequisites
-1. 
-2. Install the OpenShift Pipeline Operator if its not already installed. See OpenShift [documentation](https://docs.openshift.com/container-platform/4.6/pipelines/installing-pipelines.html) for more details.
+1. Install the OpenShift Pipeline Operator if its not already installed. See OpenShift [documentation](https://docs.openshift.com/container-platform/4.6/pipelines/installing-pipelines.html) for more details.
 
 ### Steps - Build and Deploy
 
