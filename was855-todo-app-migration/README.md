@@ -37,7 +37,26 @@ the original source environment.  You need to provide it manually. For example,
 
 4. If you wish to control and monitor your pipeline from the command line, install the OpenShift pipeline CLI by following the instructions [here](https://github.com/tektoncd/cli) 
 
-### Steps
+### Steps - Build and Deploy - Summarized Steps
+
+Below are build and deploy steps for "as is" deployment
+
+```bash
+# delete project if it exists and wait for it to terminate
+oc delete project demo-todo-was855
+
+# create project
+oc new-project demo-todo-was855
+
+# create pipeline, pipeline resources, and a pipeline run to trigger a pipeline
+oc create -f was855-todo-app-migration/pipeline/openshift
+
+# navigate to the route below after deployment
+oc get routes
+```
+
+### Steps - Build and Deploy - Detailed Steps
+
 1. Login to OCP cluster and create a project
    ```
    oc login --token={your_openshift_cluster_access_token} --server=your_openshift_cluster_url:6443
